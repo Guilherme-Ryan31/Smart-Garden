@@ -6,47 +6,51 @@ class AlertsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFFE8F5E9),
+      backgroundColor: Colors.white, // Fundo branco como na UI
       body: Column(
         children: [
-          // Cabeçalho Smart Garden
+          // Cabeçalho verde escuro
           Container(
-            padding: const EdgeInsets.only(top: 50, bottom: 20),
-            color: const Color(0xFF8BC34A),
             width: double.infinity,
-            child: const Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
+            color: const Color(0xFFA0C85E),
+            padding: const EdgeInsets.only(top: 50, left: 20, right: 20, bottom: 20),
+            child: Row(
               children: [
-                Icon(Icons.local_florist, color: Colors.white, size: 32),
-                SizedBox(height: 8),
-                Text(
+                Image.asset('assets/logo.png', height: 32, width: 32),
+                const SizedBox(width: 8),
+                const Text(
                   'Smart Garden',
                   style: TextStyle(
                     color: Colors.white,
-                    fontSize: 22,
-                    fontWeight: FontWeight.bold,
+                    fontSize: 20,
+                    fontWeight: FontWeight.w700,
                   ),
                 ),
               ],
             ),
           ),
 
-          // Seção de título e descrição
+          // Seção "Alertas"
           Container(
             width: double.infinity,
-            color: const Color(0xFFC8E6C9),
-            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
+            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 16),
+            decoration: const BoxDecoration(
+              color: Color(0xFFD2E8C9),
+              borderRadius: BorderRadius.only(
+                bottomLeft: Radius.circular(32), // canto inferior esquerdo arredondado
+              ),
+            ),
             child: const Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
                   'Alertas',
-                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                 ),
                 SizedBox(height: 4),
                 Text(
                   'Veja os alertas recentes sobre suas plantas',
-                  style: TextStyle(fontSize: 14),
+                  style: TextStyle(fontSize: 14, color: Colors.black54),
                 ),
               ],
             ),
@@ -112,17 +116,17 @@ class AlertCard extends StatelessWidget {
       margin: const EdgeInsets.only(bottom: 14),
       padding: const EdgeInsets.all(12),
       decoration: BoxDecoration(
-        color: const Color(0xFFD0F0C0),
-        borderRadius: BorderRadius.circular(12),
+        color: const Color(0xFFE5F5E5), // fundo esverdeado claro
+        borderRadius: BorderRadius.circular(16),
       ),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Container(
-            padding: const EdgeInsets.all(8),
+            padding: const EdgeInsets.all(10),
             decoration: BoxDecoration(
               color: color.withOpacity(0.2),
-              borderRadius: BorderRadius.circular(30),
+              shape: BoxShape.circle,
             ),
             child: Icon(icon, color: color),
           ),
@@ -135,12 +139,16 @@ class AlertCard extends StatelessWidget {
                   title,
                   style: const TextStyle(
                     fontSize: 16,
-                    fontWeight: FontWeight.bold,
+                    fontWeight: FontWeight.w700,
                   ),
                 ),
+                const SizedBox(height: 2),
                 Text(description),
-                const SizedBox(height: 4),
-                Text(date, style: const TextStyle(color: Colors.grey)),
+                const SizedBox(height: 8),
+                Text(
+                  date,
+                  style: const TextStyle(color: Colors.black54),
+                ),
               ],
             ),
           ),
