@@ -29,7 +29,7 @@ class OverviewScreen extends StatelessWidget {
                 children: [
                   Row(
                     children: [
-                      Image.asset('assets/logo.png', height: 32, width: 32),
+                      Image.asset('assets/logo2.png', height: 32, width: 32),
                       const SizedBox(width: 8),
                       const Text(
                         'Smart Garden',
@@ -51,8 +51,6 @@ class OverviewScreen extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(height: 20),
-
-                  // Cartão da planta monitorada
                   Container(
                     padding: const EdgeInsets.all(16),
                     decoration: BoxDecoration(
