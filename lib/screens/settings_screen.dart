@@ -6,43 +6,45 @@ class SettingsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFFE8F5E9),
+      backgroundColor: Colors.white,
       body: Column(
         children: [
-          // Cabeçalho
-          Container(
-            padding: const EdgeInsets.only(top: 50, bottom: 20),
-            color: const Color(0xFF8BC34A),
+            Container(
             width: double.infinity,
-            child: const Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
+            color: const Color(0xFFA0C85E),
+            padding: const EdgeInsets.only(top: 50, left: 20, right: 20, bottom: 20),
+            child: Row(
               children: [
-                Icon(Icons.local_florist, color: Colors.white, size: 32),
-                SizedBox(height: 8),
-                Text(
+                Image.asset('assets/logo2.png', height: 32, width: 32),
+                const SizedBox(width: 8),
+                const Text(
                   'Smart Garden',
                   style: TextStyle(
                     color: Colors.white,
-                    fontSize: 22,
-                    fontWeight: FontWeight.bold,
+                    fontSize: 20,
+                    fontWeight: FontWeight.w700,
                   ),
                 ),
               ],
             ),
           ),
-
-          // Seção título
           Container(
-            width: double.infinity,
-            color: const Color(0xFFC8E6C9),
-            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
-            child: const Text(
+          width: double.infinity,
+            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 16),
+            decoration: const BoxDecoration(
+              color: Color(0xFFD2E8C9),
+              borderRadius: BorderRadius.only(
+                bottomLeft: Radius.circular(32), 
+                ),
+            ),
+              child: const Text(
               'Configurações',
               style: TextStyle(
                 fontSize: 20,
                 fontWeight: FontWeight.bold,
               ),
             ),
+              
           ),
 
           // Itens da lista
@@ -101,4 +103,3 @@ class SettingsScreen extends StatelessWidget {
     );
   }
 }
-
