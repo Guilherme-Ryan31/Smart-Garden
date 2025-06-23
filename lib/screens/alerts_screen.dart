@@ -6,17 +6,16 @@ class AlertsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white, // Fundo branco como na UI
+      backgroundColor: Colors.white, 
       body: Column(
         children: [
-          // Cabeçalho verde escuro
           Container(
             width: double.infinity,
             color: const Color(0xFFA0C85E),
             padding: const EdgeInsets.only(top: 50, left: 20, right: 20, bottom: 20),
             child: Row(
               children: [
-                Image.asset('assets/logo.png', height: 32, width: 32),
+                Image.asset('assets/logo2.png', height: 32, width: 32),
                 const SizedBox(width: 8),
                 const Text(
                   'Smart Garden',
@@ -29,15 +28,13 @@ class AlertsScreen extends StatelessWidget {
               ],
             ),
           ),
-
-          // Seção "Alertas"
           Container(
             width: double.infinity,
             padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 16),
             decoration: const BoxDecoration(
               color: Color(0xFFD2E8C9),
               borderRadius: BorderRadius.only(
-                bottomLeft: Radius.circular(32), // canto inferior esquerdo arredondado
+                bottomLeft: Radius.circular(32), 
               ),
             ),
             child: const Column(
@@ -55,8 +52,6 @@ class AlertsScreen extends StatelessWidget {
               ],
             ),
           ),
-
-          // Lista de alertas
           Expanded(
             child: ListView(
               padding: const EdgeInsets.all(16),
